@@ -1,0 +1,11 @@
+{
+    "name": "jonathanann/e-tracker",
+    "type": "project",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/Framework",
+            "App\\": "src/App"
+        }
+    }
+}
