@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Framework\TemplateEngine;
-use App\Config\Paths;
+use App\Config\paths;
 
-class HomeController
+
+class AboutController
 {
-    // This is a property that is EXPECTING to be an instance of the class TemplateEngine in a variable called view
     private TemplateEngine $view;
 
     public function __construct()
@@ -18,11 +18,11 @@ class HomeController
         $this->view = new TemplateEngine(PATHS::VIEW);
     }
 
-    public function home()
+    public function about()
     {
-        echo $this->view->render("/index.php" ,[
-            "title" => "eTracker"
+        echo $this->view->render("/about.php" ,[
+            'title' => 'About',
+            'dangerousData' => '<script>alert(123)</script>'
         ]);
     } 
 }
-

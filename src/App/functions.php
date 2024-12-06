@@ -8,3 +8,8 @@ function dd(mixed $input)
     die();
 }
 
+function e(mixed $value) : string
+{
+    return htmlspecialchars((string) $value);
+}
+
