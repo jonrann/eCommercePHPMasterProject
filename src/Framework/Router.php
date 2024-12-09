@@ -30,7 +30,7 @@ class Router
         ];
     }
 
-    public function dispatch(string $path, string $method)
+    public function dispatch(string $path, string $method, Container $container = null)
     {
         $path = $this->normalizePath($path);
         $method = strtoupper($method);
@@ -48,9 +48,13 @@ class Router
             [$class, $function] = $route['controller'];
 
             // Create new instance of class and invoke method of class through these variables
-            $newClassInstance = new $class;
+            // Checking the container value, if so, execute code to the right of the ternary operator (?)
+                // container's resolve function is called if $container has a value
+            $controllerClassInstance = $container ? 
+                $container->resolve($class) : 
+                new $class;
             
-            $newClassInstance->{$function}();
+            $controllerClassInstance->{$function}();
         }
-    }
+    } 
 }

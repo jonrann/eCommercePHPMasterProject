@@ -13,7 +13,7 @@ class TemplateEngine
 
     public function render(string $template, array $data = [])
     {
-        // extracts keys an converts them to a variable with their values in an array
+        // extracts keys and converts them to a variable with their values in an array
         extract($data, EXTR_SKIP);
 
         ob_start();

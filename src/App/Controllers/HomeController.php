@@ -10,12 +10,11 @@ use App\Config\Paths;
 class HomeController
 {
     // This is a property that is EXPECTING to be an instance of the class TemplateEngine in a variable called view
-    private TemplateEngine $view;
 
-    public function __construct()
+    public function __construct(private TemplateEngine $view)
     // This instantiates the Home controller with setting the private property, view, as a new instance of TemplateEngine class
     {
-        $this->view = new TemplateEngine(PATHS::VIEW);
+        
     }
 
     public function home()
