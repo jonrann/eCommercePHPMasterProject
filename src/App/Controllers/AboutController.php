@@ -9,7 +9,7 @@ use App\Config\paths;
 
 
 class AboutController
-{
+{   
     public function __construct(private TemplateEngine $view)
     // This instantiates the Home controller with setting the private property, view, as a new instance of TemplateEngine class
     {
