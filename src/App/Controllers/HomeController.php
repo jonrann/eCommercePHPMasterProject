@@ -18,9 +18,12 @@ class HomeController
 
     public function home()
     {
-        echo $this->view->render("/index.php" ,[
-            "title" => "eTracker"
-        ]);
+        echo $this->view->render(
+            "/index.php" ,
+            [
+                "title" => "eTracker"
+            ]
+        );
     } 
 }
 
