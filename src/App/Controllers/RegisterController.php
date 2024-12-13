@@ -5,11 +5,16 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Framework\TemplateEngine;
+use App\Services\ValidatorService;
 use App\Config\paths;
 
 class RegisterController
 {
-    public function __construct(private TemplateEngine $view)
+    public function __construct
+        (
+        private TemplateEngine $view,
+        private ValidatorService $validatorService
+    )
     {
     }
 
