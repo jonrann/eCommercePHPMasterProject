@@ -28,6 +28,6 @@ class RegisterController
 
     public function registerPost()
     {
-        dd($_POST);
+        $this->validatorService->validateRegister($_POST);
     }
 }
